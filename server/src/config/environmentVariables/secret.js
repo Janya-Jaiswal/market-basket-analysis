@@ -1,6 +1,8 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 dotenv.config();
-const keys={
-    port:process.env.PORT
+
+const keys = {
+  port: process.env.PORT,
 };
+
 export default keys;
