@@ -1,16 +1,12 @@
-import { RouterProvider } from 'react-router'
-import {router} from './appRoutes/AllRoutes.jsx'
+import { RouterProvider } from 'react-router';
+import { router } from './appRoutes/AllRoutes.jsx';
 
 function App() {
- 
-
   return (
     <>
-   <RouterProvider router={router}>
-    {/* <App /> */}
-  </RouterProvider>,
+      <RouterProvider router={router}></RouterProvider>,
     </>
-  )
+  );
 }
 
-export default App
+export default App;

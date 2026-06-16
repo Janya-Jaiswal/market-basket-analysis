@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import { Link } from "react-router";
+import { useState } from 'react';
+import { Link } from 'react-router';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    role: 'user',
   });
 
   const handleChange = (e) => {
@@ -20,22 +21,46 @@ const Register = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
+      alert('Passwords do not match');
       return;
     }
 
-    console.log(formData);
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            role: formData.role,
+          }),
+        }
+      );
 
-    // Firebase Signup Logic Here
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message);
+        return;
+      }
+
+      alert('Registration Successful');
+      console.log(data);
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
   };
 
   return (
     <div className="h-screen bg-slate-50 flex items-center justify-center px-4 overflow-hidden">
       <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-2">
-
         {/* Left Section */}
         <div className="hidden lg:flex flex-col justify-center bg-emerald-600 p-8 text-white">
-
           <span className="bg-white/20 px-4 py-2 rounded-full w-fit text-sm">
             Join Market Basket AI
           </span>
@@ -45,12 +70,11 @@ const Register = () => {
           </h1>
 
           <p className="mt-4 text-emerald-100 leading-7">
-            Start analyzing customer behavior, uncover product
-            associations, and leverage AI-powered retail insights.
+            Start analyzing customer behavior, uncover product associations, and
+            leverage AI-powered retail insights.
           </p>
 
           <div className="mt-8 space-y-3">
-
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                 ✓
@@ -71,21 +95,15 @@ const Register = () => {
               </div>
               <p>Advanced Analytics Dashboard</p>
             </div>
-
           </div>
-
         </div>
 
         {/* Right Section */}
         <div className="p-6 md:p-8 flex flex-col justify-center">
-
           {/* Logo */}
           <div className="flex items-center gap-3 mb-6">
-
             <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">
-                MBA
-              </span>
+              <span className="text-white font-bold text-lg">MBA</span>
             </div>
 
             <div>
@@ -93,26 +111,18 @@ const Register = () => {
                 Market Basket AI
               </h2>
 
-              <p className="text-sm text-gray-500">
-                Retail Analytics Platform
-              </p>
+              <p className="text-sm text-gray-500">Retail Analytics Platform</p>
             </div>
-
           </div>
 
-          <h2 className="text-2xl font-bold text-gray-900">
-            Create Account
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900">Create Account</h2>
 
           <p className="text-gray-500 mt-1">
             Register as a customer and start exploring insights.
           </p>
 
           {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="mt-6 space-y-3"
-          >
+          <form onSubmit={handleSubmit} className="mt-6 space-y-3">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Full Name
@@ -203,9 +213,7 @@ const Register = () => {
           <div className="flex items-center gap-4 my-5">
             <div className="flex-1 h-px bg-gray-300"></div>
 
-            <span className="text-gray-500 text-sm">
-              OR
-            </span>
+            <span className="text-gray-500 text-sm">OR</span>
 
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
@@ -217,14 +225,12 @@ const Register = () => {
               alt="Google"
               className="w-5 h-5"
             />
-
             Sign Up with Google
           </button>
 
           {/* Login Link */}
           <p className="text-center mt-5 text-gray-600">
             Already have an account?
-
             <Link
               to="/login"
               className="ml-2 text-emerald-600 font-semibold hover:text-emerald-700"
@@ -232,7 +238,6 @@ const Register = () => {
               Sign In
             </Link>
           </p>
-
         </div>
       </div>
     </div>

@@ -1,26 +1,19 @@
-// import React from 'react';
-// import { BrowserRouter } from 'react-router';
-
-// export default AllRoute;
-// routes.jsx
-import { createBrowserRouter } from "react-router";
-
-import Home from "../pages/Home.jsx";
-import Login from "../pages/Login.jsx";
-import Register from "../pages/Register.jsx";
-import Dashboard from "../pages/Dashboard.jsx";
+import { createBrowserRouter } from 'react-router';
+import Home from '../pages/Home.jsx';
+import Login from '../pages/Login.jsx';
+import Register from '../pages/Register.jsx';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: Home,
   },
   {
-    path: "/login",
+    path: '/login',
     Component: Login,
   },
   {
-    path: "/register",
+    path: '/register',
     Component: Register,
-  }
+  },
 ]);
