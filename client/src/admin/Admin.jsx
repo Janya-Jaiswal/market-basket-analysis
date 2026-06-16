@@ -1,9 +1,4 @@
-import React from 'react';
-const Admin=()=>{
-    return(
-        <>
-        
-        </>
-    )
-}
+const Admin = () => {
+  return <>Admin</>;
+};
 export default Admin;

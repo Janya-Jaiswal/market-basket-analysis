@@ -1,15 +1,10 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <footer className="bg-slate-900 pt-16 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-
         {/* Brand Section */}
         <div className="mb-14">
-          <h2 className="text-3xl font-bold text-white">
-            Market Basket AI
-          </h2>
+          <h2 className="text-3xl font-bold text-white">Market Basket AI</h2>
 
           <p className="text-slate-400 mt-4 max-w-2xl leading-7">
             AI-Powered Retail Analytics & Recommendation Platform helping
@@ -21,12 +16,9 @@ const Footer = () => {
 
         {/* Footer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6 sm:gap-x-8">
-
           {/* Platform */}
           <div className="space-y-6">
-            <h3 className="text-sm text-white font-semibold">
-              Platform
-            </h3>
+            <h3 className="text-sm text-white font-semibold">Platform</h3>
 
             <ul className="space-y-4 text-sm text-slate-400">
               <li>
@@ -69,9 +61,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div className="space-y-6">
-            <h3 className="text-sm text-white font-semibold">
-              Resources
-            </h3>
+            <h3 className="text-sm text-white font-semibold">Resources</h3>
 
             <ul className="space-y-4 text-sm text-slate-400">
               <li>
@@ -114,9 +104,7 @@ const Footer = () => {
 
           {/* Company */}
           <div className="space-y-6">
-            <h3 className="text-sm text-white font-semibold">
-              Company
-            </h3>
+            <h3 className="text-sm text-white font-semibold">Company</h3>
 
             <ul className="space-y-4 text-sm text-slate-400">
               <li>
@@ -159,12 +147,9 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-6">
-            <h3 className="text-sm text-white font-semibold">
-              Stay Connected
-            </h3>
+            <h3 className="text-sm text-white font-semibold">Stay Connected</h3>
 
             <div className="flex gap-4">
-
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-emerald-600 hover:text-white transition"
@@ -185,14 +170,12 @@ const Footer = () => {
               >
                 X
               </a>
-
             </div>
 
             <div className="pt-4">
               <p className="text-sm text-slate-400 leading-6">
-                Get updates on new analytics features, recommendation
-                engine improvements, AI enhancements, and platform
-                releases.
+                Get updates on new analytics features, recommendation engine
+                improvements, AI enhancements, and platform releases.
               </p>
 
               <button
@@ -217,31 +200,20 @@ const Footer = () => {
 
         {/* Stats Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 my-14 py-8 border-y border-slate-800">
-
           <div className="text-center">
-            <h4 className="text-3xl font-bold text-emerald-500">
-              10K+
-            </h4>
+            <h4 className="text-3xl font-bold text-emerald-500">10K+</h4>
 
-            <p className="text-slate-400 text-sm mt-2">
-              Transactions Analyzed
-            </p>
+            <p className="text-slate-400 text-sm mt-2">Transactions Analyzed</p>
           </div>
 
           <div className="text-center">
-            <h4 className="text-3xl font-bold text-emerald-500">
-              500+
-            </h4>
+            <h4 className="text-3xl font-bold text-emerald-500">500+</h4>
 
-            <p className="text-slate-400 text-sm mt-2">
-              Products Managed
-            </p>
+            <p className="text-slate-400 text-sm mt-2">Products Managed</p>
           </div>
 
           <div className="text-center">
-            <h4 className="text-3xl font-bold text-emerald-500">
-              95%
-            </h4>
+            <h4 className="text-3xl font-bold text-emerald-500">95%</h4>
 
             <p className="text-slate-400 text-sm mt-2">
               Recommendation Accuracy
@@ -249,19 +221,14 @@ const Footer = () => {
           </div>
 
           <div className="text-center">
-            <h4 className="text-3xl font-bold text-emerald-500">
-              AI Powered
-            </h4>
+            <h4 className="text-3xl font-bold text-emerald-500">AI Powered</h4>
 
-            <p className="text-slate-400 text-sm mt-2">
-              Retail Insights
-            </p>
+            <p className="text-slate-400 text-sm mt-2">Retail Insights</p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-
           <p className="text-slate-400 text-sm">
             © 2026 Market Basket AI. All rights reserved.
           </p>
@@ -288,7 +255,6 @@ const Footer = () => {
               Contact
             </a>
           </div>
-
         </div>
       </div>
     </footer>

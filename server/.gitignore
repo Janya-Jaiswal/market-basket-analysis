@@ -1,3 +1,5 @@
 node_modules
 package-lock.json
 .env
+market-basket-analysis-ac330-firebase-adminsdk-fbsvc-2ce5ada89d.json
+firebase-service-account.json
