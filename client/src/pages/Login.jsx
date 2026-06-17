@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ const Login = () => {
       if (data.data.user.role === 'admin') {
         navigate('/admin/dashboard');
       } else {
-        navigate('/dashboard');
+        navigate('/products');
       }
     } catch (error) {
       console.log(error);
@@ -45,6 +47,8 @@ const Login = () => {
     }
   };
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 py-10">
       {' '}
       <div className="w-full max-w-6xl bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-2">
@@ -201,6 +205,8 @@ const Login = () => {
         </div>{' '}
       </div>{' '}
     </div>
+    <Footer/>
+    </>
   );
 };
 export default Login;
