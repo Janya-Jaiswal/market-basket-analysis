@@ -912,3 +912,29 @@ A production-style SaaS dashboard where:
 - Customers receive recommendations
 - AI explains recommendations
 - Dashboard shows sales and basket analytics
+
+
+
+
+# market-basket-analysis
+user
+Name- string
+DOB- string/date
+Email- string/email
+Password- string
+
+datatypes
+integer
+boolean
+string- "Janya jaiswal","1"
+float
+long
+char
+double
+
+# Product
+id- number/integer
+name- string
+version/model no.- string
+images- array[string,url]
+price- float

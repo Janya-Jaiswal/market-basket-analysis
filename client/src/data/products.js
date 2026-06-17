@@ -1,0 +1,793 @@
+export const products = [
+
+// =========================
+// DAIRY
+// =========================
+
+{
+id: 1,
+name: "Milk",
+category: "Dairy",
+price: 60,
+stock: 120,
+image: "https://images.unsplash.com/photo-1550583724-b2692b85b150"
+},
+{
+id: 2,
+name: "Butter",
+category: "Dairy",
+price: 120,
+stock: 80,
+image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d"
+},
+{
+id: 3,
+name: "Cheese",
+category: "Dairy",
+price: 180,
+stock: 60,
+image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d"
+},
+{
+id: 4,
+name: "Yogurt",
+category: "Dairy",
+price: 45,
+stock: 100,
+image: "https://images.unsplash.com/photo-1571212515416-fca88b972f61"
+},
+{
+id: 5,
+name: "Paneer",
+category: "Dairy",
+price: 110,
+stock: 70,
+image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7"
+},
+{
+id: 6,
+name: "Cream",
+category: "Dairy",
+price: 95,
+stock: 75,
+image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da"
+},
+{
+id: 7,
+name: "Curd",
+category: "Dairy",
+price: 40,
+stock: 90,
+image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa9f8f"
+},
+{
+id: 8,
+name: "Mozzarella Cheese",
+category: "Dairy",
+price: 220,
+stock: 50,
+image: "https://images.unsplash.com/photo-1518569656558-1f25e69d93d7"
+},
+{
+id: 9,
+name: "Flavoured Milk",
+category: "Dairy",
+price: 35,
+stock: 120,
+image: "https://images.unsplash.com/photo-1563636619-e9143da7973b"
+},
+
+// =========================
+// BAKERY
+// =========================
+
+{
+id: 10,
+name: "White Bread",
+category: "Bakery",
+price: 40,
+stock: 120,
+image: "https://images.unsplash.com/photo-1509440159596-0249088772ff"
+},
+{
+id: 11,
+name: "Brown Bread",
+category: "Bakery",
+price: 55,
+stock: 100,
+image: "https://images.unsplash.com/photo-1608198093002-ad4e005484ec"
+},
+{
+id: 12,
+name: "Burger Buns",
+category: "Bakery",
+price: 50,
+stock: 80,
+image: "https://images.unsplash.com/photo-1550317138-10000687a72b"
+},
+{
+id: 13,
+name: "Croissant",
+category: "Bakery",
+price: 45,
+stock: 90,
+image: "https://images.unsplash.com/photo-1555507036-ab794f4ade0a"
+},
+{
+id: 14,
+name: "Muffin",
+category: "Bakery",
+price: 40,
+stock: 90,
+image: "https://images.unsplash.com/photo-1607958996333-41aef7caefaa"
+},
+{
+id: 15,
+name: "Cake",
+category: "Bakery",
+price: 350,
+stock: 35,
+image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587"
+},
+{
+id: 16,
+name: "Donut",
+category: "Bakery",
+price: 45,
+stock: 90,
+image: "https://images.unsplash.com/photo-1551024601-bec78aea704b"
+},
+{
+id: 17,
+name: "Garlic Bread",
+category: "Bakery",
+price: 90,
+stock: 65,
+image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73"
+},
+{
+id: 18,
+name: "Bagel",
+category: "Bakery",
+price: 60,
+stock: 70,
+image: "https://images.unsplash.com/photo-1612203985729-70726954388c"
+},
+
+// =========================
+// BEVERAGES
+// =========================
+
+{
+id: 19,
+name: "Coffee",
+category: "Beverages",
+price: 250,
+stock: 90,
+image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+},
+{
+id: 20,
+name: "Tea",
+category: "Beverages",
+price: 180,
+stock: 90,
+image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574"
+},
+{
+id: 21,
+name: "Soft Drink",
+category: "Beverages",
+price: 50,
+stock: 150,
+image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97"
+},
+{
+id: 22,
+name: "Orange Juice",
+category: "Beverages",
+price: 120,
+stock: 100,
+image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba"
+},
+{
+id: 23,
+name: "Green Tea",
+category: "Beverages",
+price: 200,
+stock: 80,
+image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c"
+},
+{
+id: 24,
+name: "Energy Drink",
+category: "Beverages",
+price: 110,
+stock: 110,
+image: "https://images.unsplash.com/photo-1554866585-cd94860890b7"
+},
+{
+id: 25,
+name: "Lemonade",
+category: "Beverages",
+price: 70,
+stock: 90,
+image: "https://images.unsplash.com/photo-1523371683702-cfc4b8c6e5e7"
+},
+{
+id: 26,
+name: "Mango Juice",
+category: "Beverages",
+price: 120,
+stock: 95,
+image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4"
+},
+{
+id: 27,
+name: "Cold Coffee",
+category: "Beverages",
+price: 150,
+stock: 85,
+image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735"
+},
+// =========================
+// SNACKS
+// =========================
+
+{
+id: 28,
+name: "Potato Chips",
+category: "Snacks",
+price: 30,
+stock: 200,
+image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b"
+},
+{
+id: 29,
+name: "Nachos",
+category: "Snacks",
+price: 70,
+stock: 120,
+image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d"
+},
+{
+id: 30,
+name: "Chocolate Cookies",
+category: "Snacks",
+price: 80,
+stock: 110,
+image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e"
+},
+{
+id: 31,
+name: "Popcorn",
+category: "Snacks",
+price: 60,
+stock: 140,
+image: "https://images.unsplash.com/photo-1578849278619-e73505e9610f"
+},
+{
+id: 32,
+name: "Salted Peanuts",
+category: "Snacks",
+price: 50,
+stock: 160,
+image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32"
+},
+{
+id: 33,
+name: "Chocolate Bar",
+category: "Snacks",
+price: 40,
+stock: 180,
+image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b"
+},
+{
+id: 34,
+name: "Candy Pack",
+category: "Snacks",
+price: 25,
+stock: 220,
+image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f"
+},
+{
+id: 35,
+name: "Crackers",
+category: "Snacks",
+price: 55,
+stock: 140,
+image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+},
+{
+id: 36,
+name: "Trail Mix",
+category: "Snacks",
+price: 95,
+stock: 90,
+image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
+},
+
+// =========================
+// BREAKFAST
+// =========================
+
+{
+id: 37,
+name: "Cornflakes",
+category: "Breakfast",
+price: 220,
+stock: 75,
+image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+},
+{
+id: 38,
+name: "Oats",
+category: "Breakfast",
+price: 180,
+stock: 65,
+image: "https://images.unsplash.com/photo-1517673400267-0251440c45dc"
+},
+{
+id: 39,
+name: "Muesli",
+category: "Breakfast",
+price: 280,
+stock: 70,
+image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+},
+{
+id: 40,
+name: "Peanut Butter",
+category: "Breakfast",
+price: 240,
+stock: 75,
+image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60"
+},
+{
+id: 41,
+name: "Jam",
+category: "Breakfast",
+price: 160,
+stock: 90,
+image: "https://images.unsplash.com/photo-1576186726115-4d51596775d1"
+},
+{
+id: 42,
+name: "Honey",
+category: "Breakfast",
+price: 220,
+stock: 80,
+image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924"
+},
+{
+id: 43,
+name: "Pancake Mix",
+category: "Breakfast",
+price: 180,
+stock: 70,
+image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93"
+},
+{
+id: 44,
+name: "Maple Syrup",
+category: "Breakfast",
+price: 260,
+stock: 60,
+image: "https://images.unsplash.com/photo-1514996937319-344454492b37"
+},
+{
+id: 45,
+name: "Granola",
+category: "Breakfast",
+price: 210,
+stock: 80,
+image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f"
+},
+
+// =========================
+// GROCERIES
+// =========================
+
+{
+id: 46,
+name: "Rice",
+category: "Groceries",
+price: 450,
+stock: 150,
+image: "https://images.unsplash.com/photo-1586201375761-83865001e31c"
+},
+{
+id: 47,
+name: "Wheat Flour",
+category: "Groceries",
+price: 320,
+stock: 140,
+image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5"
+},
+{
+id: 48,
+name: "Sugar",
+category: "Groceries",
+price: 55,
+stock: 200,
+image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635"
+},
+{
+id: 49,
+name: "Salt",
+category: "Groceries",
+price: 25,
+stock: 220,
+image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442f"
+},
+{
+id: 50,
+name: "Cooking Oil",
+category: "Groceries",
+price: 180,
+stock: 120,
+image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5"
+},
+{
+id: 51,
+name: "Tomato Ketchup",
+category: "Groceries",
+price: 110,
+stock: 100,
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950"
+},
+{
+id: 52,
+name: "Pasta",
+category: "Groceries",
+price: 90,
+stock: 120,
+image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141"
+},
+{
+id: 53,
+name: "Pasta Sauce",
+category: "Groceries",
+price: 120,
+stock: 90,
+image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9"
+},
+{
+id: 54,
+name: "Black Pepper",
+category: "Groceries",
+price: 90,
+stock: 100,
+image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38"
+},
+{
+id: 55,
+name: "Red Chilli Powder",
+category: "Groceries",
+price: 80,
+stock: 110,
+image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d"
+},
+  // =========================
+  // PERSONAL CARE
+  // =========================
+
+  {
+    id: 56,
+    name: "Shampoo",
+    category: "Personal Care",
+    price: 220,
+    stock: 80,
+    image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f"
+  },
+  {
+    id: 57,
+    name: "Conditioner",
+    category: "Personal Care",
+    price: 240,
+    stock: 70,
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be"
+  },
+  {
+    id: 58,
+    name: "Body Wash",
+    category: "Personal Care",
+    price: 180,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883"
+  },
+  {
+    id: 59,
+    name: "Soap",
+    category: "Personal Care",
+    price: 45,
+    stock: 180,
+    image: "https://images.unsplash.com/photo-1584305574647-acf8069a3d21"
+  },
+  {
+    id: 60,
+    name: "Face Wash",
+    category: "Personal Care",
+    price: 150,
+    stock: 100,
+    image: "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137"
+  },
+  {
+    id: 61,
+    name: "Toothpaste",
+    category: "Personal Care",
+    price: 90,
+    stock: 150,
+    image: "https://images.unsplash.com/photo-1559591937-abc4b8f7f6c0"
+  },
+  {
+    id: 62,
+    name: "Toothbrush",
+    category: "Personal Care",
+    price: 40,
+    stock: 170,
+    image: "https://images.unsplash.com/photo-1559591937-c6f2f3a5d4c8"
+  },
+  {
+    id: 63,
+    name: "Hand Sanitizer",
+    category: "Personal Care",
+    price: 80,
+    stock: 130,
+    image: "https://images.unsplash.com/photo-1584483720412-ce931f4aefa8"
+  },
+  {
+    id: 64,
+    name: "Deodorant",
+    category: "Personal Care",
+    price: 200,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1626784215021-2e39ccf971cd"
+  },
+
+  // =========================
+  // FRUITS
+  // =========================
+
+  {
+    id: 65,
+    name: "Apple",
+    category: "Fruits",
+    price: 180,
+    stock: 150,
+    image: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+  },
+  {
+    id: 66,
+    name: "Banana",
+    category: "Fruits",
+    price: 60,
+    stock: 200,
+    image: "https://images.unsplash.com/photo-1574226516831-e1dff420e37f"
+  },
+  {
+    id: 67,
+    name: "Orange",
+    category: "Fruits",
+    price: 120,
+    stock: 140,
+    image: "https://images.unsplash.com/photo-1557800636-894a64c1696f"
+  },
+  {
+    id: 68,
+    name: "Mango",
+    category: "Fruits",
+    price: 220,
+    stock: 120,
+    image: "https://images.unsplash.com/photo-1553279768-865429fa0078"
+  },
+  {
+    id: 69,
+    name: "Grapes",
+    category: "Fruits",
+    price: 140,
+    stock: 130,
+    image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f"
+  },
+  {
+    id: 70,
+    name: "Pineapple",
+    category: "Fruits",
+    price: 90,
+    stock: 110,
+    image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba"
+  },
+  {
+    id: 71,
+    name: "Strawberry",
+    category: "Fruits",
+    price: 260,
+    stock: 80,
+    image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6"
+  },
+  {
+    id: 72,
+    name: "Watermelon",
+    category: "Fruits",
+    price: 100,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1563114773-84221bd62daa"
+  },
+  {
+    id: 73,
+    name: "Kiwi",
+    category: "Fruits",
+    price: 300,
+    stock: 70,
+    image: "https://images.unsplash.com/photo-1618897996318-5a901fa6ca71"
+  },
+
+  // =========================
+  // VEGETABLES
+  // =========================
+
+  {
+    id: 74,
+    name: "Tomato",
+    category: "Vegetables",
+    price: 40,
+    stock: 180,
+    image: "https://images.unsplash.com/photo-1546470427-e5f5d53f3a8b"
+  },
+  {
+    id: 75,
+    name: "Potato",
+    category: "Vegetables",
+    price: 35,
+    stock: 220,
+    image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655"
+  },
+  {
+    id: 76,
+    name: "Onion",
+    category: "Vegetables",
+    price: 50,
+    stock: 200,
+    image: "https://images.unsplash.com/photo-1508747703725-719777637510"
+  },
+  {
+    id: 77,
+    name: "Carrot",
+    category: "Vegetables",
+    price: 60,
+    stock: 160,
+    image: "https://images.unsplash.com/photo-1447175008436-054170c2e979"
+  },
+  {
+    id: 78,
+    name: "Broccoli",
+    category: "Vegetables",
+    price: 120,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc"
+  },
+  {
+    id: 79,
+    name: "Capsicum",
+    category: "Vegetables",
+    price: 80,
+    stock: 110,
+    image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83"
+  },
+  {
+    id: 80,
+    name: "Spinach",
+    category: "Vegetables",
+    price: 45,
+    stock: 140,
+    image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb"
+  },
+  {
+    id: 81,
+    name: "Cucumber",
+    category: "Vegetables",
+    price: 50,
+    stock: 150,
+    image: "https://images.unsplash.com/photo-1604977046802-8b0d6c5a5f64"
+  },
+  {
+    id: 82,
+    name: "Cauliflower",
+    category: "Vegetables",
+    price: 70,
+    stock: 120,
+    image: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc"
+  },
+
+  // =========================
+  // FROZEN FOODS
+  // =========================
+
+  {
+    id: 83,
+    name: "Frozen Pizza",
+    category: "Frozen Foods",
+    price: 320,
+    stock: 60,
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591"
+  },
+  {
+    id: 84,
+    name: "French Fries",
+    category: "Frozen Foods",
+    price: 180,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877"
+  },
+  {
+    id: 85,
+    name: "Ice Cream",
+    category: "Frozen Foods",
+    price: 220,
+    stock: 100,
+    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb"
+  },
+  {
+    id: 86,
+    name: "Frozen Nuggets",
+    category: "Frozen Foods",
+    price: 280,
+    stock: 70,
+    image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92"
+  },
+  {
+    id: 87,
+    name: "Frozen Veg Mix",
+    category: "Frozen Foods",
+    price: 190,
+    stock: 90,
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554"
+  },
+  {
+    id: 88,
+    name: "Frozen Paratha",
+    category: "Frozen Foods",
+    price: 140,
+    stock: 110,
+    image: "https://images.unsplash.com/photo-1512058564366-c9e3e0467f66"
+  },
+  {
+    id: 89,
+    name: "Frozen Burger Patty",
+    category: "Frozen Foods",
+    price: 250,
+    stock: 80,
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
+  },
+  {
+    id: 90,
+    name: "Frozen Momos",
+    category: "Frozen Foods",
+    price: 170,
+    stock: 100,
+    image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb"
+  },
+  {
+    id: 91,
+    name: "Frozen Garlic Bread",
+    category: "Frozen Foods",
+    price: 150,
+    stock: 85,
+    image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73"
+  }
+
+];
+
+export const categories = [
+  "All",
+  "Dairy",
+  "Bakery",
+  "Beverages",
+  "Snacks",
+  "Breakfast",
+  "Groceries",
+  "Personal Care",
+  "Fruits",
+  "Vegetables",
+  "Frozen Foods",
+];

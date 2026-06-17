@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,15 +52,22 @@ const Register = () => {
         return;
       }
 
-      alert('Registration Successful');
-      console.log(data);
+      alert('Registration Successful! Redirecting to Login...');
+
+setTimeout(() => {
+  navigate('/login');
+}, 1000);
+
+console.log(data);
     } catch (error) {
       console.error('Error during registration:', error);
     }
   };
 
   return (
-    <div className="h-screen bg-slate-50 flex items-center justify-center px-4 overflow-hidden">
+    <>
+    <Navbar/>
+    <div className="h-screen bg-slate-50 flex items-center justify-center px-4 overflow-hidden m-10">
       <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-2">
         {/* Left Section */}
         <div className="hidden lg:flex flex-col justify-center bg-emerald-600 p-8 text-white">
@@ -241,6 +251,8 @@ const Register = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
