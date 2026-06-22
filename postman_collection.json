@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "E-Commerce API (Cart & Purchase)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"developer@example.com\",\n  \"password\": \"securePassword123\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/api/auth/login" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Get Cart",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" }
+            ],
+            "url": { "raw": "http://localhost:8080/api/cart" }
+          }
+        },
+        {
+          "name": "Add to Cart",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"prod_XYZ123789\",\n  \"quantity\": 2\n}"
+            },
+            "url": { "raw": "http://localhost:8080/api/cart/add" }
+          }
+        },
+        {
+          "name": "Update Cart Item",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"prod_XYZ123789\",\n  \"quantity\": 5\n}"
+            },
+            "url": { "raw": "http://localhost:8080/api/cart/update" }
+          }
+        },
+        {
+          "name": "Clear Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" }
+            ],
+            "url": { "raw": "http://localhost:8080/api/cart/clear" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchase History",
+      "item": [
+        {
+          "name": "Checkout",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"productId\": \"prod_XYZ123789\",\n      \"name\": \"Wireless Mechanical Keyboard\",\n      \"price\": 89.99,\n      \"quantity\": 1\n    },\n    {\n      \"productId\": \"prod_ABC456112\",\n      \"name\": \"Ergonomic Wireless Mouse\",\n      \"price\": 45.50,\n      \"quantity\": 2\n    }\n  ],\n  \"totalAmount\": 180.99,\n  \"paymentDetails\": {\n    \"paymentMethod\": \"stripe\",\n    \"transactionId\": \"ch_3Mv8x9L2kZ0PqW1a4FvN7tYh\"\n  },\n  \"shippingAddress\": {\n    \"street\": \"123 Dev Lane\",\n    \"city\": \"Tech City\",\n    \"state\": \"CA\",\n    \"zipCode\": \"94016\",\n    \"country\": \"USA\"\n  }\n}"
+            },
+            "url": { "raw": "http://localhost:8080/api/purchase/checkout" }
+          }
+        },
+        {
+          "name": "Get User History",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" }
+            ],
+            "url": { "raw": "http://localhost:8080/api/purchase/history" }
+          }
+        },
+        {
+          "name": "Get Admin All History",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{idToken}}" }
+            ],
+            "url": { "raw": "http://localhost:8080/api/purchase/admin/all" }
+          }
+        }
+      ]
+    }
+  ]
+}
