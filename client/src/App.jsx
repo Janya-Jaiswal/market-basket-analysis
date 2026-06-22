@@ -1,10 +1,11 @@
-import { RouterProvider } from 'react-router';
-import { router } from './appRoutes/AllRoutes.jsx';
+import AllRoutes from './appRoutes/AllRoutes.jsx';
+import Loader from './components/Loader';
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>,
+      <Loader />
+      <AllRoutes />
     </>
   );
 }
