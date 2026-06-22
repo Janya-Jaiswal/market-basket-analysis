@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { products, categories } from "../data/products";
+import { Link } from "react-router";
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -96,49 +97,54 @@ const Products = () => {
                 </span>
               </div>
 
-              {/* Product Grid */}
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <div
-                    key={product.id}
-                    className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
-                  >
-                    {/* Product Image */}
-                    <div className="h-52 overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover hover:scale-105 transition duration-300"
-                      />
-                    </div>
+  {filteredProducts.map((product) => (
+    <Link key={product.id} to={`/products/${product.id}`}>
+      <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 cursor-pointer">
 
-                    {/* Product Details */}
-                    <div className="p-5">
-                      <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">
-                        {product.category}
-                      </span>
+        <div className="h-52 overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-                      <h3 className="mt-3 text-lg font-bold text-gray-800">
-                        {product.name}
-                      </h3>
+        <div className="p-5">
+          <span className="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">
+            {product.category}
+          </span>
 
-                      <p className="text-gray-500 mt-1">
-                        Stock Available: {product.stock}
-                      </p>
+          <h3 className="mt-3 text-lg font-bold">
+            {product.name}
+          </h3>
 
-                      <div className="flex justify-between items-center mt-5">
-                        <span className="text-2xl font-bold text-emerald-600">
-                          ₹{product.price}
-                        </span>
+          <p className="text-gray-500">
+            Stock Available: {product.stock}
+          </p>
 
-                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl font-medium transition">
-                          Add to Cart
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="flex justify-between items-center mt-5">
+            <span className="text-2xl font-bold text-emerald-600">
+              ₹{product.price}
+            </span>
+
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                alert(`${product.name} added to cart`);
+              }}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </Link>
+  ))}
+</div>
+             
 
               {/* No Products Found */}
               {filteredProducts.length === 0 && (
@@ -160,7 +166,7 @@ const Products = () => {
 
       <Footer />
     </>
-  );
+  )
 };
 
 export default Products;
