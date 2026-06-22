@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Products from '../pages/Products';
 import ProductDetails from '../pages/ProductDetails';
-import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Admin from '../pages/admin/Admin';
@@ -25,7 +24,6 @@ const AllRoutes = () => {
 
       {/* Authenticated User Routes */}
       <Route element={<ProtectedRoute />}>
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cart" element={<Cart />} />
       </Route>
 

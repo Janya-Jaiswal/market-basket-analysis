@@ -4,11 +4,6 @@ import { envs } from '../config/config.js';
 export const apiRequest = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token');
 
-  console.log('envs', envs);
-
-  //   const state = store.getState();
-  //   const token = state.auth.token;
-
   const headers = {
     'Content-Type': 'application/json',
     ...(options.headers || {}),
