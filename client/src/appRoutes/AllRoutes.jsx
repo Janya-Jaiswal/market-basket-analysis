@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Admin from '../pages/admin/Admin';
 import { ProtectedRoute, PublicRoute, AdminRoute } from './RouteGuards';
+import Cart from '../pages/Cart';
 
 const AllRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const AllRoutes = () => {
       {/* Authenticated User Routes */}
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/cart" element={<Cart />} />
       </Route>
 
       {/* Admin Only Routes */}

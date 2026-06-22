@@ -1,49 +1,39 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { envs } from '../config/config.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../app/slices/authSlice';
 
 const Login = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  // We still grab loading to disable the button, but the Global Loader handles the UI!
+  const { loading } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [loading, setLoading] = useState(false);
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      const response = await fetch(`${envs.base_url}/api/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        alert(data.message);
-        setLoading(false);
-        return;
-      }
-      localStorage.setItem('token', data.data.token);
-      localStorage.setItem('user', JSON.stringify(data.data.user));
-      alert('Login Successful');
-      if (data.data.user.role === 'admin') {
-        navigate('/admin/dashboard');
+      // .unwrap() allows us to act immediately upon success
+      const result = await dispatch(loginUser(formData)).unwrap();
+
+      // Navigate based on role
+      if (result.user.role === 'admin') {
+        navigate('/admin');
       } else {
         navigate('/products');
       }
     } catch (error) {
-      console.log(error);
-      alert(error.message);
-    } finally {
-      setLoading(false);
+      console.error('Login failed:', error);
+      // The error notification is already handled globally by Redux!
     }
   };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <Navbar />
@@ -172,7 +162,7 @@ const Login = () => {
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-semibold transition"
               >
                 {' '}
-                {loading ? 'Signing In...' : 'Sign In'}{' '}
+                {loading ? 'Logging in...' : 'Login'}
               </button>{' '}
             </form>{' '}
             <div className="flex items-center gap-4 my-8">
