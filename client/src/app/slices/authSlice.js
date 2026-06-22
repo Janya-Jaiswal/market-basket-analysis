@@ -1,24 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { apiRequest } from '../../services/api';
-import { showNotification } from './uiSlice';
+import toast from 'react-hot-toast';
 
 export const loginUser = createAsyncThunk(
   'auth/login',
-  async (credentials, { dispatch, rejectWithValue }) => {
+  async (credentials, { rejectWithValue }) => {
     try {
       const data = await apiRequest('/auth/login', {
         method: 'POST',
         body: JSON.stringify(credentials),
       });
-      dispatch(
-        showNotification({
-          type: 'success',
-          message: 'Logged in successfully!',
-        })
-      );
+      // Trigger success toast directly!
+      toast.success('Welcome back!');
       return data; // { token, user }
     } catch (error) {
-      dispatch(showNotification({ type: 'error', message: error.message }));
+      // Trigger error toast directly!
+      toast.error(error.message || 'Login failed');
       return rejectWithValue(error.message);
     }
   }
@@ -26,21 +23,16 @@ export const loginUser = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async (userData, { dispatch, rejectWithValue }) => {
+  async (userData, { rejectWithValue }) => {
     try {
       const data = await apiRequest('/auth/signup', {
         method: 'POST',
         body: JSON.stringify(userData),
       });
-      dispatch(
-        showNotification({
-          type: 'success',
-          message: 'Registration successful! Please login.',
-        })
-      );
+      toast.success('Account created successfully!');
       return data;
     } catch (error) {
-      dispatch(showNotification({ type: 'error', message: error.message }));
+      toast.error(error.message || 'Registration failed');
       return rejectWithValue(error.message);
     }
   }

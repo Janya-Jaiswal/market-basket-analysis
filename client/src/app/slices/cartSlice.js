@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { apiRequest } from '../../services/api';
-import { showNotification } from './uiSlice';
+import toast from 'react-hot-toast'; // IMPORT TOAST
 
 export const fetchCart = createAsyncThunk(
   'cart/fetch',
@@ -15,16 +15,16 @@ export const fetchCart = createAsyncThunk(
 
 export const addToCart = createAsyncThunk(
   'cart/add',
-  async (itemData, { dispatch, rejectWithValue }) => {
+  async (itemData, { rejectWithValue }) => {
     try {
       const data = await apiRequest('/cart/add', {
         method: 'POST',
         body: JSON.stringify(itemData),
       });
-      dispatch(showNotification({ type: 'success', message: 'Added to cart' }));
+      toast.success('Added to cart!'); // Trigger success toast!
       return data;
     } catch (error) {
-      dispatch(showNotification({ type: 'error', message: error.message }));
+      toast.error(error.message || 'Failed to add to cart');
       return rejectWithValue(error.message);
     }
   }

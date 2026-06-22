@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { categories } from '../data/products';
 import { fetchProducts } from '../app/slices/productSlice';
 import { addToCart } from '../app/slices/cartSlice';
+import toast from 'react-hot-toast';
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ const Products = () => {
   const handleAddToCart = (e, product) => {
     e.preventDefault();
     if (!isAuthenticated) {
-      alert('Please login to add items to the cart.');
+      toast.error('Please login to add items to your cart.');
       return;
     }
     dispatch(addToCart({ productId: product.id, quantity: 1 }));
