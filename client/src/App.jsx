@@ -1,10 +1,13 @@
-import { RouterProvider } from 'react-router';
-import { router } from './appRoutes/AllRoutes.jsx';
+import AllRoutes from './appRoutes/AllRoutes.jsx';
+
+import { GlobalLoader, GlobalNotification } from './components/GlobalUI.jsx';
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>,
+      <GlobalLoader />
+      <GlobalNotification />
+      <AllRoutes />
     </>
   );
 }
