@@ -27,18 +27,19 @@ export const createProduct = async (req, res) => {
 
 export const getProducts = async (req, res) => {
   try {
-    const { category, sortByPrice, page } = req.query;
+    const { category, sortByPrice, search, page, limit } = req.query;
 
     const result = await getAllProductsService({
       category,
       sortByPrice,
+      search,
       page,
-      limit: 10,
+      limit: limit || 12,
     });
 
     res.json({
       success: true,
-      data: result.products,
+      data: { products: result.products, pagination: result.pagination },
       pagination: result.pagination,
     });
   } catch (err) {

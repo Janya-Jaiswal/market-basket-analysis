@@ -8,6 +8,7 @@ import {
   clearSingleProduct,
 } from '../app/slices/productSlice';
 import { addToCart } from '../app/slices/cartSlice';
+import toast from 'react-hot-toast';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const ProductDetails = () => {
 
   const handleAddToCart = () => {
     if (!isAuthenticated) {
-      alert('Please login to add items to your cart.');
+      toast.error('Please login to add items to your cart.');
       navigate('/login');
       return;
     }
