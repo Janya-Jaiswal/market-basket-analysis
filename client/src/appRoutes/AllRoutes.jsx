@@ -4,7 +4,7 @@ import Products from '../pages/Products';
 import ProductDetails from '../pages/ProductDetails';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import Admin from '../pages/admin/Admin';
+import Admin from '../pages/admin/Admin.jsx';
 import { ProtectedRoute, PublicRoute, AdminRoute } from './RouteGuards';
 import Cart from '../pages/Cart';
 
