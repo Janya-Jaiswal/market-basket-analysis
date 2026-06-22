@@ -4,6 +4,7 @@ import Login from '../pages/Login.jsx';
 import Register from '../pages/Register.jsx';
 import Products from '../pages/Products.jsx';
 import ProductDetails from '../pages/ProductDetails.jsx';
+import Admin from '../admin/Admin.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
   {
     path: '/products/:id',
     Component: ProductDetails,
+  },
+  {
+    path: '/admin',
+    Component: Admin,
   },
 ]);
