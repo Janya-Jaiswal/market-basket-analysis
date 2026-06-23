@@ -5,6 +5,8 @@ import Register from '../pages/Register.jsx';
 import Products from '../pages/Products.jsx';
 import ProductDetails from '../pages/ProductDetails.jsx';
 import Admin from '../admin/Admin.jsx';
+import Cart from "../pages/Cart";
+import AdminDashboard from '../pages/AdminDashboard.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +32,13 @@ export const router = createBrowserRouter([
   {
     path: '/admin',
     Component: Admin,
+  },
+  {
+    path: '/cart',
+    Component: Cart,
+  },
+  {
+    path: '/adminDashboard',
+    Component: AdminDashboard,
   },
 ]);
